@@ -85,7 +85,7 @@
 // FIND <-- takes function as an arg
 // let smallNum = bigNums.find( num => num < 250 && num > 20)
 
-// Creating new arrys from existing arrays. Very cool
+// Creating new arrays from existing arrays. Very cool
 // FILTER
 // let onlyFreds = people.filter( person => person.name === "Fred")
 
@@ -345,41 +345,310 @@
 
 
 //PRACTICE: BIG SPENDERS
-// let arrTotal = businesses.orders
-// let orderTotal = businesses.reduce( (curr, next) => {
-//     arrTotal.forEach() {
-//         businesses.reduce( (curr, next) => {
-//             return curr + next
-//         })
+// let bigSpenders = businesses.filter( big => {
+//   for( i=0; i < big.orders.length; i++) {
+//     if(big.orders[i] > 9000) {
+//       return big.orders[i]
 //     }
-//     return curr + next.orders
-// }, 0)
-// let bigSpenders = businesses.filter( big => big.)
+//   }
+// })
+
+// console.log(bigSpenders)
 
 
 // PRACTICE: SOLAR SYSTEM
-const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
+// const planets = ["mercury", "venus", "earth", "mars", "jupiter", "saturn", "uranus", "neptune"]
 
-/*
-    Use the forEach method to add the name of each planet
-    to a section element in your HTML with an id of "planets".
-    Use string templates to construct the DOM elements.
-*/
-const planetEl = document.getElementById("planets")
+// /*
+//     Use the forEach method to add the name of each planet
+//     to a section element in your HTML with an id of "planets".
+//     Use string templates to construct the DOM elements.
+// */
 
-/*
-    Use the map method to create a new array where the
-    first letter of each planet is capitalized. Use the
-    `toUpperCase()` method on strings.
+// let planetHTML = document.querySelector("#planets")
+// function sectemp(obj) {
+//     return `
+//     <p>${obj}<p>
+//     `
+// }
 
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-*/
+// planets.forEach( print => {
+//     planetHTML.innerHTML += sectemp(print)
+// })
+
+// const planetEl = document.getElementById("planets")
+
+// /*
+// Use the map method to create a new array where the
+// first letter of each planet is capitalized. Use the
+// `toUpperCase()` method on strings.
+
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+// */
+
+// let newArr = planets.map( caps => caps.charAt(0).toUpperCase() + caps.substr(1))
+// console.log(newArr)
+
+// /*
+//     Use the filter method to create a new array that
+//     contains planets with the letter 'e'. Use the `includes()`
+//     method on strings.
+
+//     https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
+// */
+// // let letterE = 'e'
+// let planetsContainingE = planets.filter( letter => letter.includes('e'))        //can also call variable letterE inside
+// console.log(planetsContainingE)
 
 
-/*
-    Use the filter method to create a new array that
-    contains planets with the letter 'e'. Use the `includes()`
-    method on strings.
+//PRACTICE: SPAM, SPAM, SPAM, SPAM
 
-    https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-*/
+let customers = [                                           
+    {
+      "location": {
+        "street": "Old York Road",
+        "state": "Delaware",
+        "country": "Qatar",
+        "city": "Irma"
+      },
+      "last_name": "Herzog",
+      "job": {
+        "position": "Senior Intranet Assistant",
+        "phone_number": "1-035-577-1574",
+        "department": "sales",
+        "company": "Ganjazamlux"
+      },
+      "first_name": "Johnson",
+      "contacts": {
+        "mobile": "102.596.5226",
+        "email": [
+          "rerum@outlook.com",
+          "possimus_abraham@hotmail.com",
+          "yoshiko@gmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Maple Street",
+        "state": "Wyoming",
+        "country": "Uzbekistan",
+        "city": "Ortonville"
+      },
+      "last_name": "Stehr",
+      "job": {
+        "position": "Dynamic Quality Administrator",
+        "phone_number": "555.173.9685",
+        "department": "customer service support",
+        "company": "Hating"
+      },
+      "first_name": "Rogelio",
+      "contacts": {
+        "mobile": "1-746-406-3132",
+        "email": [
+          "saw_savannah@yahoo.com",
+          "this46@outlook.com",
+          "quidem_shayna@hotmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Cleveland Avenue",
+        "state": "South Carolina",
+        "country": "Lebanon",
+        "city": "New Salem"
+      },
+      "last_name": "McDermott",
+      "job": {
+        "position": "Human Research Architect",
+        "phone_number": "1-120-949-9685",
+        "department": "accounting",
+        "company": "Keyzazim"
+      },
+      "first_name": "Herbert",
+      "contacts": {
+        "mobile": "705.404.8808",
+        "email": [
+          "him_joshuah@yahoo.com",
+          "neha@outlook.com",
+          "tail@gmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Route 30",
+        "state": "Pennsylvania",
+        "country": "Nauru",
+        "city": "Brocton"
+      },
+      "last_name": "Buckridge",
+      "job": {
+        "position": "National Usability Technician",
+        "phone_number": "215.951.1943",
+        "department": "research and development",
+        "company": "Dongsolofind"
+      },
+      "first_name": "Keagan",
+      "contacts": {
+        "mobile": "665.835.9595",
+        "email": [
+          "trade_hunter@yahoo.com",
+          "ut@hotmail.com",
+          "throw@gmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Arch Street",
+        "state": "Illinois",
+        "country": "Guam",
+        "city": "Stroud"
+      },
+      "last_name": "Barton",
+      "job": {
+        "position": "Dynamic Directives Analyst",
+        "phone_number": "1-069-596-0831 x15766",
+        "department": "operations",
+        "company": "Zoomruntam"
+      },
+      "first_name": "Kenton",
+      "contacts": {
+        "mobile": "(972) 219-3017",
+        "email": [
+          "alberto@outlook.com",
+          "june@gmail.com",
+          "rafaela@hotmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Race Street",
+        "state": "Nebraska",
+        "country": "Republic of Saudi Arabia",
+        "city": "Guelph"
+      },
+      "last_name": "Mitchell",
+      "job": {
+        "position": "Principal Implementation Specialist",
+        "phone_number": "713-818-2034 x23626",
+        "department": "IT support",
+        "company": "Hot-tom"
+      },
+      "first_name": "Hattie",
+      "contacts": {
+        "mobile": "(144) 533-6049",
+        "email": [
+          "river32@yahoo.com",
+          "class65@gmail.com",
+          "scale_oda@outlook.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Prospect Avenue",
+        "state": "Massachusetts",
+        "country": "Fiji",
+        "city": "Hachita"
+      },
+      "last_name": "Rohan",
+      "job": {
+        "position": "Customer Identity Producer",
+        "phone_number": "110-592-6773 x3160",
+        "department": "production",
+        "company": "Zapware"
+      },
+      "first_name": "Clotilde",
+      "contacts": {
+        "mobile": "005.981.1039",
+        "email": [
+          "winter@outlook.com",
+          "kyla@gmail.com",
+          "boy@yahoo.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Lexington Court",
+        "state": "Georgia",
+        "country": "Tokelau",
+        "city": "Blackwater"
+      },
+      "last_name": "Kuphal",
+      "job": {
+        "position": "Direct Division Executive",
+        "phone_number": "(763) 900-2576 x943",
+        "department": "operations",
+        "company": "Inchdonin"
+      },
+      "first_name": "Marcelle",
+      "contacts": {
+        "mobile": "1-511-518-7079",
+        "email": [
+          "try@outlook.com",
+          "part73@yahoo.com",
+          "mother5@hotmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Cobblestone Court",
+        "state": "Minnesota",
+        "country": "Saint Helena, Ascension and Tristan da Cunha",
+        "city": "North Stonington"
+      },
+      "last_name": "Thompson",
+      "job": {
+        "position": "Product Response Facilitator",
+        "phone_number": "(948) 430-6348 x4290",
+        "department": "communication",
+        "company": "Goldcare"
+      },
+      "first_name": "Briana",
+      "contacts": {
+        "mobile": "714-922-9557",
+        "email": [
+          "randi@outlook.com",
+          "christian@yahoo.com",
+          "tempore_gilda@hotmail.com"
+        ]
+      }
+    },
+    {
+      "location": {
+        "street": "Mill Street",
+        "state": "Kentucky",
+        "country": "Ireland",
+        "city": "Crystal"
+      },
+      "last_name": "Weimann",
+      "job": {
+        "position": "Future Web Representative",
+        "phone_number": "693-204-7849 x4251",
+        "department": "legal",
+        "company": "K-touch"
+      },
+      "first_name": "Brittany",
+      "contacts": {
+        "mobile": "1-327-084-4643",
+        "email": [
+          "she@hotmail.com",
+          "quam3@gmail.com",
+          "recusandae23@outlook.com"
+        ]
+      }
+    }
+  ];
+
+// From that array, extract just the customers' contact email addresses and store them in a new array. You will need a nested array method - meaning one iteration inside another one - since you need to iterate the entire array of customers, and then iterate the array of emails for each one.
+
+let emailList = customers.filter( cust => cust.contacts.email)
+
+console.log(emailList)
+// console.log(customers[0].contacts.email)
